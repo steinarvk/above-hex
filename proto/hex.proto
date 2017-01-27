@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option java_package = "com.kaldager.above.hexpb";
+option java_outer_classname = "Hex";
+
+package hexpb;
+
+enum Direction {
+  NORTH = 0; // (0, +2)
+  NORTHWEST = 1; // (-1, +1)
+  SOUTHWEST = 2; // (-1, -1)
+  SOUTH = 3; // (0, -2)
+  SOUTHEAST = 4; // (+1, -1)
+  NORTHEAST = 5; // (+1, +1)
+}
+
+message HexCoord {
+  int32 x = 1;
+  int32 y = 2;
+}
+
+message HexSet {
+  repeated HexCoord coords = 1;
+}
